@@ -22,7 +22,19 @@ const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+const UpdateSignleUser = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const UpdateData = req.body;
+  const result = await UserService.UpdateSignleUser(id, UpdateData);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Update User Successfull',
+    data: result,
+  });
+});
 export const UserController = {
   insertIntoDB,
   getAllFromDB,
+  UpdateSignleUser,
 };

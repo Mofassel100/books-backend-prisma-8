@@ -13,29 +13,20 @@ const getAllFromDB = async () => {
   return result;
 };
 // getAllData
-// const UpdateSignleUser = async (
-//   id: string,
-//   payload: Partial<User>
-// ): Promise<User> => {
-//   const result = await prisma.user.update({
-//     where: {
-//       id,
-//     },
-//     data: payload,
-//   });
-//   return result;
-// const DeletedUser = async (
-//   id: string,
-// ): Promise<User> => {
-//   const result = await prisma.user.delete({
-//     where: {
-//       id,
-//     },
-//     data: payload,
-//   });
-//   return result;
-// };
+const UpdateSignleUser = async (
+  id: string,
+  payload: Partial<User>
+): Promise<User> => {
+  const result = await prisma.user.update({
+    where: {
+      id,
+    },
+    data: payload,
+  });
+  return result;
+};
 export const UserService = {
   insertIntoDB,
   getAllFromDB,
+  UpdateSignleUser,
 };
