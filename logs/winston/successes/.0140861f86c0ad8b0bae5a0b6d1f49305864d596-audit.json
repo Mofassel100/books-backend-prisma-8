@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\successes\\.0140861f86c0ad8b0bae5a0b6d1f49305864d596-audit.json",
+    "files": [
+        {
+            "date": 1693543370014,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\successes\\phu-2023-01-09-10-success.log",
+            "hash": "8ba96d1747b4a90d812f131987e3690191635489d148511d0f3ee23115911f3e"
+        },
+        {
+            "date": 1693545094034,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\successes\\phu-2023-01-09-11-success.log",
+            "hash": "20e90a9e2df27df83da8e69d5afebb7504e4836d3edf09ebdcd563b4ab0894fc"
+        },
+        {
+            "date": 1693548169693,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\successes\\phu-2023-01-09-12-success.log",
+            "hash": "b9e264262363661f247391338370c7b690cb2b8d78b3050232dde0df1aac5770"
+        }
+    ],
+    "hashType": "sha256"
+}
