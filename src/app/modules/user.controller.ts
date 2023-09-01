@@ -28,7 +28,7 @@ const getSignleFromDB = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'get All User Successfull',
+    message: 'get Signle  User Successfull',
     data: result,
   });
 });
@@ -43,9 +43,22 @@ const UpdateSignleUser = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+const DeleteSignleUser = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+
+  const result = await UserService.DeleteSignleUser(id);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Deleted User Successfull',
+    data: result,
+  });
+});
+
 export const UserController = {
   insertIntoDB,
   getAllFromDB,
   UpdateSignleUser,
   getSignleFromDB,
+  DeleteSignleUser,
 };

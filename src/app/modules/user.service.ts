@@ -34,9 +34,19 @@ const UpdateSignleUser = async (
   });
   return result;
 };
+const DeleteSignleUser = async (id: string): Promise<User> => {
+  const result = await prisma.user.delete({
+    where: {
+      id,
+    },
+  });
+
+  return result;
+};
 export const UserService = {
   insertIntoDB,
   getAllFromDB,
   UpdateSignleUser,
   getSignleFromDB,
+  DeleteSignleUser,
 };

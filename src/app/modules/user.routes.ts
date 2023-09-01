@@ -20,4 +20,9 @@ router.patch(
   auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN),
   UserController.UpdateSignleUser
 );
+router.delete(
+  '/users/:id',
+  auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN),
+  UserController.DeleteSignleUser
+);
 export const UserRouter = router;
