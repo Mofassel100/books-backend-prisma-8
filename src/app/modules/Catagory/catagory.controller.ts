@@ -42,9 +42,21 @@ const UpdateCategoryDB = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+const DeletedCategoryDB = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+
+  const result = await CatagoryService.DeletedCategoryDB(id);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Category Deleted Successfully',
+    data: result,
+  });
+});
 export const CatagoryController = {
   insertIntoDB,
   getAllFromDB,
   getSignleDB,
   UpdateCategoryDB,
+  DeletedCategoryDB,
 };

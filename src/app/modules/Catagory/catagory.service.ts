@@ -31,9 +31,18 @@ const UpdateCategoryDB = async (
   });
   return result;
 };
+const DeletedCategoryDB = async (id: string): Promise<Catagory> => {
+  const result = await prisma.catagory.delete({
+    where: {
+      id,
+    },
+  });
+  return result;
+};
 export const CatagoryService = {
   insertIntoDB,
   getAllFromDB,
   getSignelDB,
   UpdateCategoryDB,
+  DeletedCategoryDB,
 };
