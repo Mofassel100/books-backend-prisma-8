@@ -22,7 +22,29 @@ const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+const getSignleDB = catchAsync(async (req: Request, res: Response) => {
+  const result = await CatagoryService.getSignelDB(req.params.id);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Category fetched Successfully',
+    data: result,
+  });
+});
+const UpdateCategoryDB = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const UpdateData = req.body;
+  const result = await CatagoryService.UpdateCategoryDB(id, UpdateData);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Category Updated Successfully',
+    data: result,
+  });
+});
 export const CatagoryController = {
   insertIntoDB,
   getAllFromDB,
+  getSignleDB,
+  UpdateCategoryDB,
 };
