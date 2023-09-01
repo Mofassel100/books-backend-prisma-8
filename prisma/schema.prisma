@@ -20,6 +20,11 @@ model User {
   profileImg String
   @@map("users")
 }
+model Catagory {
+  id String @id @default(uuid())
+  title String
+  @@map("catagorys")
+}
 enum RoleCategory {
   admin
   customer
