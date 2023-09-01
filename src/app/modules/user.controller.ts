@@ -22,6 +22,16 @@ const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+const getSignleFromDB = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const result = await UserService.getSignleFromDB(id);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'get All User Successfull',
+    data: result,
+  });
+});
 const UpdateSignleUser = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
   const UpdateData = req.body;
@@ -37,4 +47,5 @@ export const UserController = {
   insertIntoDB,
   getAllFromDB,
   UpdateSignleUser,
+  getSignleFromDB,
 };

@@ -12,6 +12,15 @@ const getAllFromDB = async () => {
   const result = await prisma.user.findMany({});
   return result;
 };
+// getSigleData
+const getSignleFromDB = async (id: string) => {
+  const result = await prisma.user.findUnique({
+    where: {
+      id,
+    },
+  });
+  return result;
+};
 // getAllData
 const UpdateSignleUser = async (
   id: string,
@@ -29,4 +38,5 @@ export const UserService = {
   insertIntoDB,
   getAllFromDB,
   UpdateSignleUser,
+  getSignleFromDB,
 };
