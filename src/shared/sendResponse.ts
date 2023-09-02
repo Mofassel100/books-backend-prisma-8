@@ -6,8 +6,10 @@ type IApiReponse<T> = {
   message?: string | null;
   meta?: {
     page: number;
-    limit: number;
-    total: number;
+    limit?: number;
+    total?: number;
+    size?: number;
+    totalPage?: number;
   };
   data?: T | null;
 };

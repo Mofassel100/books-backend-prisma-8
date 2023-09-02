@@ -8,13 +8,20 @@ const insertIntoDB = async (data: Catagory): Promise<Catagory> => {
   return result;
 };
 const getAllFromDB = async () => {
-  const result = await prisma.catagory.findMany({});
+  const result = await prisma.catagory.findMany({
+    include: {
+      books: true,
+    },
+  });
   return result;
 };
 const getSignelDB = async (id: string) => {
   const result = await prisma.catagory.findUnique({
     where: {
       id,
+    },
+    include: {
+      books: true,
     },
   });
   return result;
