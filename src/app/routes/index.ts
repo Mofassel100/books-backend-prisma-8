@@ -31,7 +31,7 @@ const moduleRoutes = [
     routes: OrderRouter,
   },
   {
-    path: 'profile',
+    path: '/profile',
     routes: ProfileRouter,
   },
 ];

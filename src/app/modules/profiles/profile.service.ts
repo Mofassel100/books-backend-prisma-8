@@ -3,10 +3,13 @@ import httpStatus from 'http-status';
 import ApiError from '../../../errors/ApiError';
 import { prisma } from '../../../shared/prisma';
 
-const getUserProfile = async (user: Partial<User>): Promise<User | null> => {
+const getUserProfile = async (user: string): Promise<Partial<User>> => {
+  if (!user) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'User ID is missing');
+  }
   const result = await prisma.user.findUnique({
     where: {
-      id: user.id,
+      id: user,
     },
   });
 
