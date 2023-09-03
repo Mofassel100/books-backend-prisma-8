@@ -269,7 +269,7 @@ const getCategoryIdFromDB = async (
   categoryId: string
 ) => {
   const { page, size, skip } = paginationHelpers.calculatePagination(options);
-  const { search, ...filterData } = filters;
+  const { search, minPrice, maxPrice, ...filterData } = filters;
   console.log(search);
   const andConditions = [];
   if (search) {
@@ -285,21 +285,32 @@ const getCategoryIdFromDB = async (
 
   if (Object.keys(filterData).length > 0) {
     andConditions.push({
-      AND: Object.keys(filterData).map(key => {
-        if (BookRelationalFields.includes(key)) {
-          return {
-            [BookRelationalFieldsMapper[key]]: {
-              id: (filterData as any)[key],
-            },
-          };
-        } else {
-          return {
-            [key]: {
-              equals: (filterData as any)[key],
-            },
-          };
-        }
-      }),
+      AND: Object.keys(filterData).map(key => ({
+        ['categoryId']: {
+          equals: (filterData as any)[key],
+        },
+      })),
+    });
+  }
+  // Filter on price
+  if (minPrice && maxPrice) {
+    andConditions.push({
+      price: {
+        gte: Number(minPrice),
+        lte: Number(maxPrice),
+      },
+    });
+  } else if (minPrice) {
+    andConditions.push({
+      price: {
+        gte: Number(minPrice),
+      },
+    });
+  } else if (maxPrice) {
+    andConditions.push({
+      price: {
+        lte: Number(maxPrice),
+      },
     });
   }
 

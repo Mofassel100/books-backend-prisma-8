@@ -1,13 +1,8 @@
 export type IBookFilterRequest = {
   search?: string | undefined;
-  categoryId?: string | undefined;
-  price?: number | undefined;
-  minPrice?: number | undefined;
-  maxPrice?: number | undefined;
-  title?: string | undefined;
-  author?: string | undefined;
-  genre?: string | undefined;
-  category?: string | undefined;
+  category?: string;
+  minPrice?: string | undefined;
+  maxPrice?: string | undefined;
 };
 
 export type IStudentMyCoursesRequest = {
