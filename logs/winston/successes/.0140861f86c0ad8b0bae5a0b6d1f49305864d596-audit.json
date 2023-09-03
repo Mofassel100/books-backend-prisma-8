@@ -134,6 +134,16 @@
             "date": 1693752776397,
             "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\successes\\phu-2023-03-09-20-success.log",
             "hash": "5a9c5fa143d07005c5c5290d01abee0552fcecf79dcc388bab7ad9ea4cf0858b"
+        },
+        {
+            "date": 1693754861941,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\successes\\phu-2023-03-09-21-success.log",
+            "hash": "4f9afe7145230623d14ade3178dc46282f04a437c61e353461523ca37fc088f7"
+        },
+        {
+            "date": 1693760857099,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\successes\\phu-2023-03-09-23-success.log",
+            "hash": "461058ef53ffb4c00d8be1b8dc61bb6d35b79d8b39718221c23fdda2fadda54e"
         }
     ],
     "hashType": "sha256"
