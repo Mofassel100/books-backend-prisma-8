@@ -64,6 +64,56 @@
             "date": 1693631847349,
             "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\errors\\phu-2023-02-09-11-error.log",
             "hash": "0a3e9271a2447514811645e9b011cc84105cfd128f0868629e191b7b92beaaad"
+        },
+        {
+            "date": 1693664011974,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\errors\\phu-2023-02-09-20-error.log",
+            "hash": "81684f2fe4be5bf0317e5a76b64e50dd4ff7f9ba848f5bccc97b9300bd32d509"
+        },
+        {
+            "date": 1693666960626,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\errors\\phu-2023-02-09-21-error.log",
+            "hash": "73ba9ad4f616c7b07b26c6661d5d2eec9fb047ccf4aabdf805f8fdfa3d32b2be"
+        },
+        {
+            "date": 1693670690708,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\errors\\phu-2023-02-09-22-error.log",
+            "hash": "6bfd8121ffc44dc5967517b49facb364e44302ac8c007b23062a6b9d2dc8a7d2"
+        },
+        {
+            "date": 1693674937175,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\errors\\phu-2023-02-09-23-error.log",
+            "hash": "36e43160fe6e33cadb8c27adf537e5f73eab66bef47c600f726f7cdbf8a62383"
+        },
+        {
+            "date": 1693682393163,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\errors\\phu-2023-03-09-01-error.log",
+            "hash": "1b0ee365aba4034c10cc38ae248b8a67e8f3257aa1cb0890585c28b95a9ec178"
+        },
+        {
+            "date": 1693714689993,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\errors\\phu-2023-03-09-10-error.log",
+            "hash": "133c7dda1f66c9907eb9d1bf5d11461893e4e874830eb6ebb2b50391262920a6"
+        },
+        {
+            "date": 1693719508040,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\errors\\phu-2023-03-09-11-error.log",
+            "hash": "65abc44737d7976101c3046dec1687b9ed0e644b6948619ba538d38189436502"
+        },
+        {
+            "date": 1693720840603,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\errors\\phu-2023-03-09-12-error.log",
+            "hash": "58629a67071b34e5dad185168cc9af5a7881eea801bacbe82dd6a5a3032be6cc"
+        },
+        {
+            "date": 1693726408817,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\errors\\phu-2023-03-09-13-error.log",
+            "hash": "8c3261b5ac99f9b8c91de522c6ca80b3dcc12547d64928232b44a8e26466d28f"
+        },
+        {
+            "date": 1693728061632,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\errors\\phu-2023-03-09-14-error.log",
+            "hash": "6c01185a4750a9b884e19c2f0afd1e6fd5089d746497d32c0807e6037d37eb02"
         }
     ],
     "hashType": "sha256"

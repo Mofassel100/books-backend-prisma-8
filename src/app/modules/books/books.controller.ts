@@ -1,7 +1,9 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 import catchAsync from '../../../shared/catchAsync';
+import pick from '../../../shared/pick';
 import sendResponse from '../../../shared/sendResponse';
+import { BookFilterableFields } from './book.constant';
 import { BookService } from './books.service';
 
 const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
@@ -25,7 +27,27 @@ const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
 //   });
 // });
 const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
-  const result = await BookService.getAllFromDB();
+  const filters = pick(req.query, BookFilterableFields);
+  const options = pick(req.query, ['page', 'size', 'sortBy', 'sortOrder']);
+  const result = await BookService.getAllFromDB(filters, options);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Book fetched Successfully',
+
+    data: result,
+  });
+});
+const getCategoryIdFromDB = catchAsync(async (req: Request, res: Response) => {
+  const filters = pick(req.query, BookFilterableFields);
+  const categoryId = req.params.categoryId;
+  const options = pick(req.query, ['page', 'size', 'sortBy', 'sortOrder']);
+  const result = await BookService.getCategoryIdFromDB(
+    filters,
+    options,
+    categoryId
+  );
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -72,4 +94,5 @@ export const BookController = {
   getSignleDB,
   UpdateBookDB,
   DeletedBookDB,
+  getCategoryIdFromDB,
 };

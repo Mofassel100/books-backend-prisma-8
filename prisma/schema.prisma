@@ -16,8 +16,10 @@ model User {
   password String @default("123456")
   address String
   role RoleCategory 
+  orders Order[]
   contactNo String
   profileImg String
+  reviewAndRatings ReviewAndRating[]
   @@map("users")
 }
 model Catagory {
@@ -35,9 +37,34 @@ model Book {
   publicationDate String @default("2023-04-16")
   categoryId String
   category Catagory @relation(fields: [categoryId],references: [id])
+  reviewAndRatings ReviewAndRating[]
   @@map("books")
 }
+model ReviewAndRating {
+  id String @id @default(uuid())
+  review String 
+  rating Int @default(1)
+  userId String
+  user User @relation(fields: [userId],references: [id])
+  bookId String
+  book Book @relation(fields: [bookId],references: [id])
+}
+model Order {
+  id String @id @default(uuid())
+  userId String 
+  user User @relation(fields: [userId],references: [id])
+  status Status @default(pending)
+   orderedBooks Json
+  createdAt DateTime   @default(now())
+ 
+}
+
 enum RoleCategory {
   admin
   customer
+}
+enum Status {
+  pending
+ shipped
+ delivered
 }

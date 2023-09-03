@@ -10,6 +10,7 @@ router.post(
   BookController.insertIntoDB
 );
 router.get('/', BookController.getAllFromDB);
+router.get('/:categoryId/category', BookController.getCategoryIdFromDB);
 router.get('/:id', BookController.getSignleDB);
 router.patch(
   '/:id',
