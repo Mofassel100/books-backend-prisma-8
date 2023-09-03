@@ -119,6 +119,11 @@
             "date": 1693732644465,
             "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\successes\\phu-2023-03-09-15-success.log",
             "hash": "438cafb03eefe032d3fe93b507f9831b93ba5708157aade2b69ecfd58d4bf0e6"
+        },
+        {
+            "date": 1693735362027,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\successes\\phu-2023-03-09-16-success.log",
+            "hash": "f3aff769641eac1af447c001ba4560fafd5cf6bff9fe5f73431406fa2b0fb955"
         }
     ],
     "hashType": "sha256"

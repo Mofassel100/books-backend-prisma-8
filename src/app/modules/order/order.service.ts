@@ -44,37 +44,32 @@ const getOrderFromDB = async (user: Partial<User>): Promise<Order[] | null> => {
   throw new ApiError(httpStatus.BAD_REQUEST, 'order Not Found');
 };
 
-//  const getOrderService = async (
-//   user: Partial<User>,
-//   id: string
-// ): Promise<Order | null> => {
-//   let result;
+const getSingleOrder = async (
+  userId: string,
+  role: string,
+  id: string
+): Promise<Order | null> => {
+  let result;
 
-//   if (user.role === 'customer') {
-//     result = await prisma.order.findUnique({ where: { id, userId: user.id } });
-//   } else {
-//     result = await prisma.order.findUnique({
-//       where: {
-//         id,
-//       },
-//     });
-//   }
+  if (role === 'customer') {
+    result = await prisma.order.findUnique({ where: { id, userId } });
+  } else {
+    result = await prisma.order.findUnique({
+      where: {
+        id,
+      },
+    });
+  }
 
-//   if (!result) {
-//     throw new ApiError(httpStatus.NOT_FOUND, 'Orders not found');
-//   }
+  if (!result) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Orders not found');
+  }
 
-//   return result;
-// };
-//   const order = await prisma.order.create({
-//     data: {
-//       userId: userId,
-//       orderedBooks,
-//     },
-//   });
-//   return order;
-// };
+  return result;
+};
+
 export const OrderService = {
   insertIntoDB,
   getOrderFromDB,
+  getSingleOrder,
 };

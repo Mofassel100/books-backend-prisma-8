@@ -30,18 +30,22 @@ const getOrderFromDB = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-//  const getOrder = tryCatch(async (req: Request, res: Response) => {
-//   const { orderId } = req.params
-//   const result = await getOrderService(req.user as Partial<User>, orderId)
+const getSingleOrder = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const userId = req.user?.userId;
+  const role = req.user?.role;
 
-//   sendRes<Order>(res, {
-//     statusCode: httpStatus.OK,
-//     success: true,
-//     message: 'Order fetched successfully',
-//     data: result,
-//   })
-// })
+  const result = await OrderService.getSingleOrder(userId, role, id);
+
+  sendResponse<Order>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Order fetched successfully',
+    data: result,
+  });
+});
 export const OrderController = {
   insertIntoDB,
   getOrderFromDB,
+  getSingleOrder,
 };
