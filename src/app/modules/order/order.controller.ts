@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 
+import { Order, User } from '@prisma/client';
 import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
 import { OrderService } from './order.service';
@@ -18,16 +19,16 @@ const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-//  const getOrders = tryCatch(async (req: Request, res: Response) => {
-//   const result = await getOrdersService(req.user as Partial<User>)
+const getOrderFromDB = catchAsync(async (req: Request, res: Response) => {
+  const result = await OrderService.getOrderFromDB(req.user as Partial<User>);
 
-//   sendRes<Order[]>(res, {
-//     statusCode: httpStatus.OK,
-//     success: true,
-//     message: 'Orders fetched  successfully',
-//     data: result,
-//   })
-// })
+  sendResponse<Order[]>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Order fetched all  successfully',
+    data: result,
+  });
+});
 
 //  const getOrder = tryCatch(async (req: Request, res: Response) => {
 //   const { orderId } = req.params
@@ -42,4 +43,5 @@ const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
 // })
 export const OrderController = {
   insertIntoDB,
+  getOrderFromDB,
 };
