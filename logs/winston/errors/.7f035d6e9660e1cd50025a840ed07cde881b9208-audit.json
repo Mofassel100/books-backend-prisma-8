@@ -149,6 +149,11 @@
             "date": 1693822590228,
             "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\errors\\phu-2023-04-09-16-error.log",
             "hash": "83d370e0405169710279e8c8061b7cc6e7ced05ad1f469d48122d57a5ff8d041"
+        },
+        {
+            "date": 1693826486252,
+            "name": "C:\\next-level-assingment\\books-backend-prisma-assignment\\logs\\winston\\errors\\phu-2023-04-09-17-error.log",
+            "hash": "462da6ee261aa1fadf259a3f0df9ab41ffe8792b6f1139bb9597fc2f368a6da5"
         }
     ],
     "hashType": "sha256"
