@@ -2,7 +2,9 @@
   "name": "books-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.js",
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
     "start": "node dist/server.js",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
