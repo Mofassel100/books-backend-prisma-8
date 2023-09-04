@@ -1,7 +1,6 @@
 import { Server } from 'http';
 import app from './app';
 import config from './config';
-import { errorlogger } from './shared/logger';
 
 async function bootstrap() {
   const server: Server = app.listen(config.port, () => {
@@ -18,7 +17,7 @@ async function bootstrap() {
   };
 
   const unexpectedErrorHandler = (error: unknown) => {
-    errorlogger.error(error);
+    console.error(error);
     exitHandler();
   };
 
@@ -34,9 +33,3 @@ async function bootstrap() {
 }
 
 bootstrap();
-
-// {
-//   "version": 2,
-//   "builds": [{ "src": "server.js", "use": "@vercel/node" }],
-//   "routes": [{ "src": "/(.*)", "dest": "dist/server.js" }]
-// }
